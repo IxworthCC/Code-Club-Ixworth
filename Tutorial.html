@@ -70,7 +70,11 @@
             currentIndex = (currentIndex + 1) % textBlocks.length;
             displayElement.textContent = textBlocks[currentIndex];
         }
-
+        function backText() {
+            const displayElement = document.getElementById("displayText");
+            currentIndex = (currentIndex - 1) % textBlocks.length;
+            displayElement.textContent = textBlocks[currentIndex];
+        }
         function adjustTextSize(factor) {
             const displayElement = document.getElementById("displayText");
             const currentSize = parseInt(window.getComputedStyle(displayElement).fontSize);
@@ -79,6 +83,7 @@
     </script>
     <p id="displayText" class="large-text">Today we are making a 3D coin collector game using HatchXR</p>
     <button onclick="toggleText()">Next</button>
+    <button onclick="backText()">Back</button>
     <iframe id="myIframe" src="https://kids.hatchxr.com"></iframe>
     <button onclick="adjustSize(2)">Make Bigger</button>
     <button onclick="adjustSize(-2)">Make Smaller</button>
